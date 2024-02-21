@@ -9,6 +9,7 @@
 <!--  -->
 <template>
   <button
+    ref="_ref"
     class="yy-button"
     :class="{
       'is-plain': plain,
@@ -19,12 +20,25 @@
       [`yy-button--${size}`]: size
     }"
     :disabled="disabled"
+    :autofocus="autofocus"
+    :type="nativeType"
   >
     <slot />
   </button>
 </template>
 
 <script setup lang="ts">
-import { ButtonProps } from './types'
-defineProps<ButtonProps>()
+import type { ButtonProps } from './types'
+import { ref } from 'vue'
+
+defineOptions({
+  name: 'YyButton'
+})
+
+withDefaults(defineProps<ButtonProps>(), {
+  nativeType: 'button'
+})
+
+const _ref = ref<HTMLButtonElement>()
+defineExpose({ ref: _ref })
 </script>

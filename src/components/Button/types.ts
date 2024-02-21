@@ -4,20 +4,24 @@
  * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @LastEditTime: 2024-02-20 22:20:29
  * @FilePath: \yiyi-ui-vue3\src\components\Button\types.ts
- * @Description: 
+ * @Description:
  */
-import {PropType} from 'vue'
 
-export type ButtonType = 'primary' |'success'| 'warning' | 'danger' | 'info' 
+import type { PropType } from 'vue'
+
+export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
 export type ButtonSize = 'large' | 'medium' | 'small' | 'mini'
+export type NativeType = 'button' | 'submit' | 'reset'
 
 export interface ButtonProps {
   type?: ButtonType
   size?: ButtonSize
- plain?: boolean
+  plain?: boolean
   round?: boolean
   circle?: boolean
   disabled?: boolean
+  nativeType?: NativeType
+  autofocus?: boolean
 }
 export const buttonProps = {
   type: {
@@ -38,4 +42,8 @@ export const buttonProps = {
   disabled: {
     type: Boolean as PropType<boolean>
   }
+}
+
+export interface ButtonInstance {
+  ref: HTMLButtonElement
 }
