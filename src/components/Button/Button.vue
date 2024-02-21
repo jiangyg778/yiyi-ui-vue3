@@ -2,7 +2,7 @@
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-20 21:55:35
  * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
- * @LastEditTime: 2024-02-20 22:30:04
+ * @LastEditTime: 2024-02-21 22:00:51
  * @FilePath: \yiyi-ui-vue3\src\components\Button\Button.vue
  * @Description: button组件
 -->
@@ -28,17 +28,22 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonProps } from './types'
-import { ref } from 'vue'
+import type { ButtonProps } from './types';
+import { ref } from 'vue';
 
 defineOptions({
   name: 'YyButton'
-})
+});
 
 withDefaults(defineProps<ButtonProps>(), {
   nativeType: 'button'
-})
+});
 
-const _ref = ref<HTMLButtonElement>()
-defineExpose({ ref: _ref })
+const _ref = ref<HTMLButtonElement>();
+defineExpose({ ref: _ref });
 </script>
+<style>
+.yy-button {
+  background-color: var(--main-bg-color);
+}
+</style>
