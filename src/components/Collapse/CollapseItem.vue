@@ -1,9 +1,9 @@
 <!--
  * @Author: jiangyaguang 
  * @Date: 2024-02-22 13:30:55
- * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
- * @LastEditTime: 2024-02-22 23:30:29
- * @FilePath: \yiyi-ui-vue3\src\components\Collapse\CollapseItem.vue
+ * @LastEditors: jiangyaguang 
+ * @LastEditTime: 2024-02-23 13:00:07
+ * @FilePath: /yiyi-ui-vue3/src/components/Collapse/CollapseItem.vue
  * @Description: CollapseItem
 -->
 <!--  -->
@@ -25,9 +25,13 @@
     >
       <slot name="title"> {{ title }} </slot>
     </div>
-    <div class="yy-collapse-item__content" :id="`item-content-${name}`" v-show="isActive">
-      <slot />
-    </div>
+    <transition name="slide" v-on="transitionEvent">
+      <div class="yy-clollapse-item__wrapper" v-show="isActive">
+        <div class="yy-collapse-item__content" :id="`item-content-${name}`">
+          <slot />
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -51,6 +55,31 @@ const isActive = computed(() => {
 const handleClick = () => {
   if (props.disabled) return;
   collapseContext?.handleItemClick(props.name);
+};
+
+const transitionEvent: Record<string, (el: HTMLElement) => void> = {
+  beforeEnter: (el) => {
+    el.style.height = '0px';
+    el.style.overflow = 'hidden';
+  },
+  enter: (el) => {
+    el.style.height = el.scrollHeight + 'px';
+  },
+  afterEnter: (el) => {
+    el.style.height = '';
+    el.style.overflow = '';
+  },
+  beforeLeave: (el) => {
+    el.style.height = el.scrollHeight + 'px';
+    el.style.overflow = 'hidden';
+  },
+  leave: (el) => {
+    el.style.height = '0px';
+  },
+  afterLeave: (el) => {
+    el.style.height = '';
+    el.style.overflow = '';
+  }
 };
 </script>
 <style></style>

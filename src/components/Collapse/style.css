@@ -53,5 +53,9 @@
 }
 .slide-enter-active, .slide-leave-active {
   transition: height var(--yy-transition-duration);
+  -webkit-transition: height var(--yy-transition-duration);
+  -moz-transition: height var(--yy-transition-duration);
+  -ms-transition: height var(--yy-transition-duration);
+  -o-transition: height var(--yy-transition-duration);
 }
 
