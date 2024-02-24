@@ -2,26 +2,28 @@
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-20 21:53:02
  * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
- * @LastEditTime: 2024-02-20 22:20:29
+ * @LastEditTime: 2024-02-24 22:26:45
  * @FilePath: \yiyi-ui-vue3\src\components\Button\types.ts
  * @Description:
  */
 
-import type { PropType } from 'vue'
+import type { PropType } from 'vue';
 
-export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
-export type ButtonSize = 'large' | 'medium' | 'small' | 'mini'
-export type NativeType = 'button' | 'submit' | 'reset'
+export type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info';
+export type ButtonSize = 'large' | 'medium' | 'small' | 'mini';
+export type NativeType = 'button' | 'submit' | 'reset';
 
 export interface ButtonProps {
-  type?: ButtonType
-  size?: ButtonSize
-  plain?: boolean
-  round?: boolean
-  circle?: boolean
-  disabled?: boolean
-  nativeType?: NativeType
-  autofocus?: boolean
+  type?: ButtonType;
+  size?: ButtonSize;
+  plain?: boolean;
+  round?: boolean;
+  circle?: boolean;
+  disabled?: boolean;
+  nativeType?: NativeType;
+  autofocus?: boolean;
+  icon?: string;
+  loading?: boolean;
 }
 export const buttonProps = {
   type: {
@@ -42,8 +44,8 @@ export const buttonProps = {
   disabled: {
     type: Boolean as PropType<boolean>
   }
-}
+};
 
 export interface ButtonInstance {
-  ref: HTMLButtonElement
+  ref: HTMLButtonElement;
 }

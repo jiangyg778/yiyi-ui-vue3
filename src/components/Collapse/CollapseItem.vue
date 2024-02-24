@@ -1,9 +1,9 @@
 <!--
  * @Author: jiangyaguang 
  * @Date: 2024-02-22 13:30:55
- * @LastEditors: jiangyaguang 
- * @LastEditTime: 2024-02-23 13:00:07
- * @FilePath: /yiyi-ui-vue3/src/components/Collapse/CollapseItem.vue
+ * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
+ * @LastEditTime: 2024-02-24 22:37:23
+ * @FilePath: \yiyi-ui-vue3\src\components\Collapse\CollapseItem.vue
  * @Description: CollapseItem
 -->
 <!--  -->
@@ -24,6 +24,7 @@
       @click="handleClick"
     >
       <slot name="title"> {{ title }} </slot>
+      <Icon icon="angle-right" class="header-angle" />
     </div>
     <transition name="slide" v-on="transitionEvent">
       <div class="yy-clollapse-item__wrapper" v-show="isActive">
@@ -39,6 +40,7 @@
 import type { CollapseItemProps } from './types';
 import { computed, inject } from 'vue';
 import { collapseContextKey } from './types';
+import Icon from '../Icon/Icon.vue';
 
 defineOptions({
   name: 'YyCollapseItem'

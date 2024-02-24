@@ -1,0 +1,16 @@
+.yy-icon {
+  --yy-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--yy-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary,info,success,warning,danger {
+  .yy-icon--$(val) {
+    --yy-icon-color: var(--yy-color-$(val));
+  }
+}

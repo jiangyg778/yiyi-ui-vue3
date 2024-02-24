@@ -2,7 +2,7 @@
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-20 21:46:42
  * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
- * @LastEditTime: 2024-02-24 21:33:27
+ * @LastEditTime: 2024-02-24 22:31:41
  * @FilePath: \yiyi-ui-vue3\src\App.vue
  * @Description: 
 -->
@@ -31,6 +31,11 @@ onMounted(() => {
   <Button type="warning">按钮</Button>
   <Button type="danger">按钮</Button>
   <Button type="info">按钮</Button>
+  <br />
+  <Button type="info" loading>按钮</Button>
+  <Button type="success" plain="" icon="arrow-up">按钮1</Button>
+  <br />
+
   <Collapse v-model="openValue">
     <Item name="a" title="Title A">
       <h1>headline title</h1>
@@ -43,5 +48,5 @@ onMounted(() => {
       <div>this is cccc test</div>
     </Item>
   </Collapse>
-  <Icon icon="arrow-up" />
+  <Icon icon="arrow-up" type="danger" color="yellow" />
 </template>

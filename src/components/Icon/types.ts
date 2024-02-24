@@ -2,7 +2,7 @@
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-24 21:15:03
  * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
- * @LastEditTime: 2024-02-24 21:28:12
+ * @LastEditTime: 2024-02-24 21:55:09
  * @FilePath: \yiyi-ui-vue3\src\components\Icon\types.ts
  * @Description:
  */
@@ -50,4 +50,6 @@ export interface IconProps {
   beatFade?: boolean;
   spinPulse?: boolean;
   spinReverse?: boolean;
+  type?: 'primary' | 'success' | 'warning' | 'danger' | 'info';
+  color?: string;
 }
