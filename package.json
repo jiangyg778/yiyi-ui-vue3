@@ -12,6 +12,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.6",
     "vue": "^3.3.4"
   },
   "devDependencies": {
@@ -27,11 +30,11 @@
     "eslint": "^8.49.0",
     "eslint-plugin-vue": "^9.17.0",
     "npm-run-all2": "^6.1.1",
-    "postcss-nested": "^6.0.1",
     "postcss-color-mix": "^1.1.0",
     "postcss-each": "^1.1.0",
     "postcss-each-variables": "^0.3.0",
     "postcss-for": "^2.1.1",
+    "postcss-nested": "^6.0.1",
     "prettier": "^3.0.3",
     "typescript": "~5.2.0",
     "unplugin-vue-macros": "^2.7.10",

@@ -2,7 +2,7 @@
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-20 21:46:42
  * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
- * @LastEditTime: 2024-02-22 23:24:41
+ * @LastEditTime: 2024-02-24 21:33:27
  * @FilePath: \yiyi-ui-vue3\src\App.vue
  * @Description: 
 -->
@@ -10,6 +10,7 @@
 import Button from './components/Button/Button.vue';
 import Item from './components/Collapse/CollapseItem.vue';
 import Collapse from './components/Collapse/Collapse.vue';
+import Icon from './components/Icon/Icon.vue';
 import { ref, onMounted } from 'vue';
 import type { ButtonInstance } from './components/Button/types';
 import './styles/index.css';
@@ -25,7 +26,6 @@ onMounted(() => {
 </script>
 
 <template>
-  {{ openValue }}
   <Button type="primary" plain disabled ref="buttonRef">按钮</Button>
   <Button type="success">按钮</Button>
   <Button type="warning">按钮</Button>
@@ -43,4 +43,5 @@ onMounted(() => {
       <div>this is cccc test</div>
     </Item>
   </Collapse>
+  <Icon icon="arrow-up" />
 </template>
