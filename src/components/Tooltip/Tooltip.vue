@@ -2,13 +2,13 @@
  * @Author: jiangyaguang 
  * @Date: 2024-02-26 13:39:34
  * @LastEditors: jiangyaguang 
- * @LastEditTime: 2024-02-26 18:57:22
+ * @LastEditTime: 2024-02-26 19:08:30
  * @FilePath: /yiyi-ui-vue3/src/components/Tooltip/Tooltip.vue
  * @Description: tooltip
 -->
 <!--  -->
 <template>
-  <div class="yy-tooltip">
+  <div class="yy-tooltip" v-on="outEvents">
     <div class="yy-tooltip__trigger" ref="triggerNode" v-on="events">
       <slot />
     </div>
@@ -37,6 +37,7 @@ const triggerNode = ref<HTMLElement | null>(null);
 
 let popperInstance: null | Instance = null;
 let events: Record<string, any> = reactive({});
+let outEvents: Record<string, any> = reactive({});
 
 const triglePoper = () => {
   isOpen.value = !isOpen.value;
@@ -56,7 +57,7 @@ const close = () => {
 const attrachEvents = () => {
   if (props.trigger === 'hover') {
     events['mouseenter'] = open;
-    events['mouseleave'] = close;
+    outEvents['mouseleave'] = close;
   } else if (props.trigger === 'click') {
     events['click'] = triglePoper;
   }
