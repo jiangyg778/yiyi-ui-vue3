@@ -2,7 +2,7 @@
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-20 21:46:42
  * @LastEditors: jiangyaguang 
- * @LastEditTime: 2024-02-26 19:07:11
+ * @LastEditTime: 2024-02-27 13:57:01
  * @FilePath: /yiyi-ui-vue3/src/App.vue
  * @Description: 
 -->
@@ -51,10 +51,10 @@ onMounted(() => {
     </Item>
   </Collapse>
   <Icon icon="arrow-up" type="danger" color="yellow" />
-  <Tooltip content="111111" placement="right" trigger="hover">
-    1212121
+  <Tooltip placement="right" trigger="click">
+    <h1>11111</h1>
     <template #content>
-      <div>333333</div>
+      <div>22222</div>
     </template>
   </Tooltip>
 </template>
