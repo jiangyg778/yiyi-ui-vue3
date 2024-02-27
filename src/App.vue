@@ -1,9 +1,9 @@
 <!--
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-20 21:46:42
- * @LastEditors: jiangyaguang 
- * @LastEditTime: 2024-02-27 13:57:01
- * @FilePath: /yiyi-ui-vue3/src/App.vue
+ * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
+ * @LastEditTime: 2024-02-27 21:55:20
+ * @FilePath: \yiyi-ui-vue3\src\App.vue
  * @Description: 
 -->
 <script setup lang="ts">
@@ -51,7 +51,7 @@ onMounted(() => {
     </Item>
   </Collapse>
   <Icon icon="arrow-up" type="danger" color="yellow" />
-  <Tooltip placement="right" trigger="click">
+  <Tooltip placement="right" trigger="hover" :openDelay="1000" :closeDelay="1000">
     <h1>11111</h1>
     <template #content>
       <div>22222</div>
