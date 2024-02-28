@@ -1,9 +1,9 @@
 <!--
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-20 21:46:42
- * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
- * @LastEditTime: 2024-02-27 22:43:39
- * @FilePath: \yiyi-ui-vue3\src\App.vue
+ * @LastEditors: jiangyaguang 
+ * @LastEditTime: 2024-02-28 13:14:55
+ * @FilePath: /yiyi-ui-vue3/src/App.vue
  * @Description: 
 -->
 <script setup lang="ts">
@@ -11,7 +11,7 @@ import Button from './components/Button/Button.vue';
 import Item from './components/Collapse/CollapseItem.vue';
 import Collapse from './components/Collapse/Collapse.vue';
 import Icon from './components/Icon/Icon.vue';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, h } from 'vue';
 import type { ButtonInstance } from './components/Button/types';
 import './styles/index.css';
 import Tooltip from './components/Tooltip/Tooltip.vue';
@@ -20,13 +20,12 @@ import Dropdown from './components/Dropdown/Dropdown.vue';
 const buttonRef = ref<ButtonInstance | null>(null);
 const openValue = ref(['a']);
 const trigger = ref('hover');
-const menuOptions = ref([
-  { key: '1', label: '选项一' },
-  { key: '2', label: '选项二' },
-  { key: '3', label: '选项三', disabled: true },
-  { key: '4', label: '选项四', divided: true },
-  { key: '5', label: '选项五' }
-]);
+const options: any[] = [
+  { key: 1, label: h('b', 'this is bold') },
+  { key: 2, label: 'item2', disabled: true },
+  { key: 3, label: 'item3', divided: true },
+  { key: 4, label: 'item4' }
+];
 
 onMounted(() => {
   if (buttonRef.value) {
@@ -65,7 +64,7 @@ onMounted(() => {
       <div>22222</div>
     </template>
   </Tooltip>
-  <Dropdown trigger="click" placement="bottom" :menuOptions="menuOptions">
+  <Dropdown trigger="click" placement="bottom" :menuOptions="options">
     <Button type="primary">按钮</Button>
   </Dropdown>
 </template>

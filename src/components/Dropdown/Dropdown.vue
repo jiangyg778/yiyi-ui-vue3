@@ -1,9 +1,9 @@
 <!--
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-27 22:26:49
- * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
- * @LastEditTime: 2024-02-27 22:42:32
- * @FilePath: \yiyi-ui-vue3\src\components\Dropdown\Dropdown.vue
+ * @LastEditors: jiangyaguang 
+ * @LastEditTime: 2024-02-28 13:17:56
+ * @FilePath: /yiyi-ui-vue3/src/components/Dropdown/Dropdown.vue
  * @Description: 
 -->
 <template>
@@ -28,7 +28,7 @@
               :class="{ 'is-disabled': item.disabled, 'is-divided': item.divided }"
               :id="`dropdown-item-${item.key}`"
             >
-              {{ item.label }}
+              <RenderVnode :vNode="item.label" />
             </li>
           </template>
         </ul>
@@ -41,12 +41,15 @@ import { type Ref, ref } from 'vue';
 import type { DropdownProps, DropdownInstance, DropdownEmits, MenuOption } from './types';
 import Tooltip from '../Tooltip/Tooltip.vue';
 import type { TooltipInstance } from '../Tooltip/types';
+import RenderVnode from '../Common/RenderVnode';
 
 defineOptions({
   name: 'YyDropdown'
 });
 
-const props = defineProps<DropdownProps>();
+const props = withDefaults(defineProps<DropdownProps>(), {
+  hideAfterClick: true
+});
 const emits = defineEmits<DropdownEmits>();
 const tooltipRef = ref() as Ref<TooltipInstance>;
 
@@ -57,6 +60,9 @@ const visibleChange = (val: boolean) => {
 const itemClick = (item: MenuOption) => {
   if (item.disabled) return;
   emits('select', item);
+  if (props.hideAfterClick) {
+    tooltipRef.value?.hide();
+  }
 };
 
 defineExpose<DropdownInstance>({
