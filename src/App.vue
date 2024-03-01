@@ -1,9 +1,9 @@
 <!--
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-20 21:46:42
- * @LastEditors: jiangyaguang 
- * @LastEditTime: 2024-02-28 13:14:55
- * @FilePath: /yiyi-ui-vue3/src/App.vue
+ * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
+ * @LastEditTime: 2024-03-01 23:10:56
+ * @FilePath: \yiyi-ui-vue3\src\App.vue
  * @Description: 
 -->
 <script setup lang="ts">
@@ -16,6 +16,8 @@ import type { ButtonInstance } from './components/Button/types';
 import './styles/index.css';
 import Tooltip from './components/Tooltip/Tooltip.vue';
 import Dropdown from './components/Dropdown/Dropdown.vue';
+import Message from './components/Message/index.vue';
+import { createMessage } from './components/Message/method';
 
 const buttonRef = ref<ButtonInstance | null>(null);
 const openValue = ref(['a']);
@@ -31,6 +33,12 @@ onMounted(() => {
   if (buttonRef.value) {
     console.log(buttonRef.value.ref);
   }
+  createMessage({
+    type: 'info',
+    message: 'this is message123',
+    duration: 0,
+    showClose: true
+  });
 });
 </script>
 
@@ -67,4 +75,5 @@ onMounted(() => {
   <Dropdown trigger="click" placement="bottom" :menuOptions="options">
     <Button type="primary">按钮</Button>
   </Dropdown>
+  <Message type="info" :duration="0" showClose>this is message</Message>
 </template>
