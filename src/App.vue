@@ -2,7 +2,7 @@
  * @Author: DESKTOP-DO9B8F8\admin 297138663@qq.com
  * @Date: 2024-02-20 21:46:42
  * @LastEditors: DESKTOP-DO9B8F8\admin 297138663@qq.com
- * @LastEditTime: 2024-03-01 23:10:56
+ * @LastEditTime: 2024-03-04 22:25:53
  * @FilePath: \yiyi-ui-vue3\src\App.vue
  * @Description: 
 -->
@@ -36,6 +36,18 @@ onMounted(() => {
   createMessage({
     type: 'info',
     message: 'this is message123',
+    duration: 0,
+    showClose: true
+  });
+  createMessage({
+    type: 'info',
+    message: 'this is message1235',
+    duration: 0,
+    showClose: true
+  });
+  createMessage({
+    type: 'info',
+    message: 'this is message12356',
     duration: 0,
     showClose: true
   });
@@ -75,5 +87,5 @@ onMounted(() => {
   <Dropdown trigger="click" placement="bottom" :menuOptions="options">
     <Button type="primary">按钮</Button>
   </Dropdown>
-  <Message type="info" :duration="0" showClose>this is message</Message>
+  <!-- <Message type="info" :duration="0" showClose>this is message</Message> -->
 </template>
